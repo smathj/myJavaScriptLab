@@ -1,0 +1,38 @@
+.title {
+    border : 1px solid black;
+    width: 200px;
+    padding : 5px;
+    margin-bottom: 5px;
+    background-color: khaki;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.left_outter, .right_outter {
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+}
+
+.left_myTable, .right_myTable {
+    /* width: 700px; */
+    border-radius: 10px;
+    text-align: center;
+    border : 1px solid dodgerblue;
+    
+}
+
+
+
+.left_myTable thead, .right_myTable thead {
+    background-color: gold;
+    
+}
+
+
+.left_myTable tbody, .right_myTable tbody {
+    border-radius: 10px;
+}
+
+

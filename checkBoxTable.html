@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <style src=""></style> -->
+    <link rel='stylesheet' type='text/css' href='checkBoxTable.css'>
+
+</head>
+<body>
+    <div class="title">전체 체크박스 ON/OFF     
+        <input type="button" value="이동" onclick="fn_move()"/>
+        <input type="button" value="삭제" onclick="fn_delete()"/>
+    </div>
+    
+    <div class='left_outter'>
+        <table border="1" class="left_myTable">
+            <thead>
+                <th>Num</th>        <!-- 1 -->
+                <th><input type="checkbox"  name="left_Total_Check"  onclick="fn_check('left_Check','left_Total_Check')" /></th>     <!-- 2 -->
+                <th>Name</th>       <!-- 3 -->
+                <th>Comment</th>    <!-- 4 -->
+                <th>Date</th>       <!-- 5 -->
+            </thead>
+            <tbody class='left_tbody'>
+                <tr>
+                    <td>1</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>나북이</td>
+                    <td>개발시늉자</td>
+                    <td class="now_Date"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>키북이</td>
+                    <td>파이썬을 품은남자</td>
+                    <td class="now_Date"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>하북이</td>
+                    <td>제안서를 마친자</td>
+                    <td class="now_Date"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>버거성</td>
+                    <td>호텔을 품은자</td>
+                    <td class="now_Date"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>징가련</td>
+                    <td>맥주를 품은자</td>
+                    <td class="now_Date"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><input type="checkbox"  name="left_Check" /></td>
+                    <td>대리쿤</td>
+                    <td>대리운전을 하는자</td>
+                    <td class="now_Date"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+
+    <div class='right_outter'>
+        <table border="1" class="right_myTable">
+            <thead>
+                <th>Num</th>        <!-- 1 -->
+                <th><input type="checkbox"  name="right_Total_Check"  onclick="fn_check('right_Check','right_Total_Check')" /></th>     <!-- 2 -->
+                <th>Name</th>       <!-- 3 -->
+                <th>Comment</th>    <!-- 4 -->
+                <th>Date</th>       <!-- 5 -->
+            </thead>
+            <tbody id="left_tbody">
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <script src="checkBoxTable.js"></script>
+</body>
+</html>

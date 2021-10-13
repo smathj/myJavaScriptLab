@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // document.write("Node.DOCUMENT_NODE : " + Node.DOCUMENT_NODE + "<br>");
+        // document.write("<hr>");
+        // document.write("Node.ELEMENT_NODE : " + Node.ELEMENT_NODE + "<br>");
+        // document.write("<hr>");
+        // document.write("Node.ATTRIBUTE_NODE : " + Node.ATTRIBUTE_NODE + "<br>");
+        // document.write("<hr>");
+        // document.write("Node.TEXT_NODE : " + Node.TEXT_NODE + "<br>");
+        // document.write("<hr>");
+        // document.write("Node.DOCUMENT_FRAGMENT_NODE : " + Node.DOCUMENT_FRAGMENT_NODE + "<br>");
+        // document.write("<hr>");
+        // document.write("Node.DOCUMENT_TYPE_NODE : " + Node.DOCUMENT_TYPE_NODE + "<br>");
+        // document.write("<hr>");
+        
+        
+        for(var key in Node) {
+            console.log(key,' = '+Node[key]);
+            document.write("Node."+ key + " : " + Node[key] + "<br>");
+            document.write("<hr>");
+        }
+    </script>
+</body>
+</html>
