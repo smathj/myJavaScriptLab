@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let counter = 0;
+            const h1 = document.querySelector('h1');
+
+            h1.addEventListener('click', (event) => {
+                counter++;
+                h1.textContent = `클릭 횟수 ${counter}`;
+            });
+
+
+
+            const h2 = document.querySelector('button');
+            h2.addEventListener('click', (event) => {
+                counter = 0;
+                h1.textContent = `클릭 횟수 ${counter}`;
+            });
+
+
+
+        });
+
+
+    </script>
+    <style>
+        h1 {
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭 횟수 : 0</h1>
+    <button style="background-color: crimson;">초기화</button>
+</body>
+</html>
