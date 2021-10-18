@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+
+        // $(function() {
+        // });
+
+        $(document).ready(function() {
+
+        });
+
+        function change(i) {
+
+            if(i == 1) {
+                $("#mytxt").val('짖지마');
+                $("#hdtxt").val('몰래 짖지마');
+
+                $("#mytxt").attr('style', 'background-color : red;');
+                $("#mytxt").attr('class', 'ccc');
+            } else {
+                $("#mytxt").val('짖어');
+                $("#hdtxt").val('몰래짖어');
+
+                $("#mytxt").attr('style', 'background-color : none;');
+                $("#mytxt").attr('class', 'c1');
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" value="짖어" id="mytxt" class="c1"/>
+    <br>
+    <input type="hidden" value="몰래짖어" id="hdtxt" />
+    <br>
+
+    <select id="slt">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+    </select>
+
+    <br>
+    <button onclick="change('1')">버튼</button><br>
+    <button onclick="change('0')">취소</button>
+</body>
+</html>
