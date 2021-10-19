@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>원하는 태그찾기</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+
+            // parent(), find(), prev(), next()
+            var t1 = $("tr:eq(0)").html();
+            // console.log(t1);
+            var t2 = $("tr").find("td").html();
+            // console.log(t2);    // <input type="text" id="text1" value="돌쇠하북이">
+            var t3 = $("tr").find("td").find('input').val();
+            // console.log(t3);    // 돌쇠 하북이
+            var t4 = $("tr").find("td").next().find('input').val();
+            // console.log(t4);    // 마님 하북이
+
+            var t4 = $("#text2").parent().prev().html();
+            // console.log(t4); // <input type="text" id="text1" value="돌쇠 하북이">
+
+            var t5 = $("#text2").parent().prev().find('input').val();
+            // console.log(t5);
+
+            var t6 = $("#text2").parent().parent().next().find("option[name=each_book]:selected").val();
+            // console.log(t6);
+
+            var t7 = $("#text2").parent().parent().next().find("option:selected").val();
+            console.log('t6과 t7은 동일함');
+            console.log(t6 === t7); // true
+            console.log(t7);
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+             <td><input type="text" id="text1" value="돌쇠 하북이"/></td>
+            <td><input type="text" id="text2" value="마님 하북이"/></td>
+        </tr>
+        <tr>
+            <td>
+                <select name="books" id="select_book" >
+                    <option name="each_book" value="키북이" >키북이</option>
+                    <option name="each_book" value="하북이" selected>하북이</option>
+                    <option name="each_book" value="동경이" >동경이</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
