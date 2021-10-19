@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본선택자 핸들링</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            // alert($("#dogId").val());
+            // alert($(".dogClass").val());
+            // alert($("input[name=dogRadio]:checked").val());
+            // alert($("input[name=dogCheck]:checked").val());
+            // alert($("#select_book").val());
+
+            
+            console.log($("input[name=dogCheck]:checked").eq(0).val());
+            console.log($("input[name=dogCheck]:checked").eq(1).val());
+            console.log("--------------------------");
+
+            $("input[name=dogCheck]:checked").each(function(index,value) {
+                console.log("인덱스번호 출력 :" + index);
+                console.log("태그가 출력");
+                console.log(value);
+
+                console.log("값이 출력");
+                console.log($(this).val()); // 이값으로 체크된 value를 가져옴
+            });
+
+
+            
+
+            $("#select_book").on("change",function() {
+                alert($("#select_book").val());
+            });
+        });
+
+
+        
+    </script>
+
+</head>
+<body>
+    <input type="text" id="dogId" value="하북이"/><br>
+    <input type="text" class="dogClass" value="키북이" /><br>
+    <input type="radio" name="dogRadio" value="말티즈 하북" /><label>말티즈 하북</label>
+    <input type="radio" name="dogRadio" value="푸들 하북" checked="checked" /><label>푸들 하북</label>
+    <input type="radio" name="dogRadio" value="시바견 하북" /><label>시바견 하북</label><br>
+    <input type="checkbox" name="dogCheck" value="팔굽혀펴기" checked="checked"/><label>팔굽혀펴기</label>
+    <input type="checkbox" name="dogCheck" value="아령" checked="checked" /><label>아령</label>
+    <input type="checkbox" name="dogCheck" value="스쿼트"/><label>스쿼트</label><br>
+    <select id="select_book"> 
+        <option value="하북이 하나" selected>하북이 하나</option>
+        <option value="하북이 둘">하북이 둘</option>
+        <option value="하북이 셋">하북이 셋</option>
+    </select>
+</body>
+</html>
