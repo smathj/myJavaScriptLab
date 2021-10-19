@@ -12,9 +12,14 @@
             // alert($("input[name=dogCheck]:checked").val());
             // alert($("#select_book").val());
 
-            
+
             console.log($("input[name=dogCheck]:checked").eq(0).val());
             console.log($("input[name=dogCheck]:checked").eq(1).val());
+
+            console.log('★')
+            console.log($("input[name=dogCheck]:checked:eq(1)").val());
+            
+            
             console.log("--------------------------");
 
             $("input[name=dogCheck]:checked").each(function(index,value) {

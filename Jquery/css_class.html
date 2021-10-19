@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class 조작 With Css</title>
+    <style>
+        .blueHabook {
+            color: blue;
+            border : solid 1px blue;
+        }
+
+        .redHabook {
+            color: red;
+            border : solid 1px red;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // 두가지방법 동일하다
+            $("#habook").attr("style","color:red;");
+            $("#habook").css("background-color","gold");
+            
+            setTimeout(() => {
+                $("#habook").attr("style","");
+                $("#habook").removeClass("blueHabook");
+                $("#habook").addClass("blueHabook");
+            }, 2000);
+
+            setTimeout(() => {
+                if($("#habook").hasClass("blueHabook")) {
+                    $("#habook").addClass("redHabook");
+                } else {
+                    $("#habook").addClass("blueHabook");
+                }
+            }, 4000);
+
+
+            
+
+        });
+    </script>
+</head> 
+<body>
+<input type="text" id="habook" value="하북이"/>
+
+</body>
+</html>
