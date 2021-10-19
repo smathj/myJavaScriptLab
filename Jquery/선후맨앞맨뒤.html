@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선후</title>
+    <style>
+        #d1, #d2, #d3, #d4, #d5 {
+            border : 1px solid red;
+            width: 100px;
+            text-align: center;
+        }
+
+        #d4, #d5 {
+            border : 1px solid  darkcyan;
+            width: 100px;
+            text-align: center;
+        }
+
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $(               function() {...}                 )
+        $(function() {
+            // before()      : 형제로 앞에
+            // after()      : 형제로 뒤에
+            // prepend()    : 자식 맨앞에(첫재)
+            // append()     : 자식 맨뒤에(막내)
+            
+
+        })
+        function myOn() {
+            var d1 = '<span style="color : blue">하북_피자</span><br>';
+            $("#d1").prepend(d1);
+
+            var d2 = '<span style="color : blue">키북_피자</span><br>';
+            $("#d2").append(d2);
+
+            var before_bro = '<div id="d4"></div><br><hr>'
+            $("#d2").before(before_bro);
+
+            var d4 = '<span style="color : blue">동경_피자</span><br>';
+            $("#d4").append(d4);
+
+            var after_bro = '<br><hr><div id="d5"></div>'
+            $("#d2").after(after_bro);
+
+            var d5 = '<span style="color : blue">대리_족발</span><br>';
+            $("#d5").append(d5);
+        }
+    </script>
+
+</head>
+<body>
+    <div id="d1">
+        <span>하북_김밥</span><br>
+        <span>하북_치킨</span><br>
+    </div>
+    <br>
+    <hr>
+    <div id="d2">
+        <span>키북_김밥</span><br>
+        <span>키북_치킨</span><br>
+    </div>
+    <br>
+    <hr>
+    <div id="d3">
+        <span>동경_김밥</span><br>
+        <span>동경_치킨</span><br>
+    </div>
+    <br>
+    <hr>
+    <button onclick="myOn()">만들기</button>
+</body>
+</html>
