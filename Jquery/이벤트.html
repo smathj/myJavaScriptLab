@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트(동적)</title>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+          
+            //click, dbclick , keypress, on
+            $("#back_bark").click(function() {
+                var barking = '<span>왈왈!</span><br>'
+                $("#center").after(barking);
+            });
+
+            $("#front_bark").click(function() {
+                var barking = '<span>멍멍!</span><br>'
+                $("#center").before(barking);
+            });
+
+
+            $("#press").keypress(function(event) {
+                console.log(event.keyCode);
+            });
+
+            $("#search").click(function() {
+                var food = $("#slt").val();
+                var caller = $("#caller").val();
+
+                console.log('주문 음식 : ' + food);
+                console.log('주문자 : '    + caller);
+            });
+
+
+            // 동적으로 html를 생성
+            var i = 1;
+
+            var tag = "<span id='dong' style='background-color: blue; color : orange'>동적태그"+ i +"</span><br>"
+            
+            $("#add").click(function() {
+
+                $("#addArea").append(tag);
+                console.log(i);
+                i++;
+                tag = "<span id='dong' style='background-color: blue; color : orange'>동적태그"+ i +"</span><br>"
+            });
+
+            // // 1. [잘못된 방법]
+            // $("#dong").click(function() {
+            //     console.log('동적 태그의 이벤트 실행');
+            // });
+
+            // 2. [올바른 방법]
+            // 동적으로 생성한경우에 다음과 같이 이벤트를 등록한다
+            $(document).on('click','#dong',function() {
+                // console.log('동적 태그의 이벤트 실행');
+                console.log($(this).text());
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <button id="front_bark">앞에서 멍멍 짖어</button>
+    <button id="back_bark">뒤에서 왈왈 짖어</button>
+    
+    <br>
+    <div id="center" style="color: red;">
+        <span>[기준]</span>
+    </div>
+    <br>
+
+    <input id="press" type="text" placeholder="입력하고 콘솔확인"/>
+    <br>
+
+
+    <select id="slt">
+        <option>피자</option>
+        <option>치킨</option>
+        <option>족발</option>
+    </select>
+    <input type="text" id="caller"/>
+    <button id="search">주문</button>
+    <br>
+
+
+
+    <button id="add">동적 태그 생성</button>
+    <div id="addArea">
+
+    </div>
+
+
+</body>
+</html>
